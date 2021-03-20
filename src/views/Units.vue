@@ -1,6 +1,7 @@
 <template>
   <div class="units">
     <AgesFilter :units="getUnits"/>
+    <CostsFilter />
     <table class="table">
       <thead>
       <tr>
@@ -23,12 +24,14 @@
 import { mapGetters } from 'vuex';
 import UnitItem from '../components/UnitItem.vue';
 import AgesFilter from '../components/AgesFilter.vue';
+import CostsFilter from '../components/CostsFilter.vue';
 
 export default {
   name: 'Units',
   components: {
     UnitItem,
     AgesFilter,
+    CostsFilter,
   },
   computed: {
     ...mapGetters('units', ['getUnits']),
@@ -41,7 +44,7 @@ export default {
   width: 80%;
   border-collapse: collapse;
   border: 3px solid $color-dark-blue;
-  margin: 1rem 1rem 0 1rem;
+  margin: 5rem 1rem 0 1rem;
   & th {
     text-align: center;
     background-color: $color-dark-blue;
