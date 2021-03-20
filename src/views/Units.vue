@@ -1,29 +1,34 @@
 <template>
-  <table class="table">
-    <thead>
-    <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>age</th>
-      <th>costs</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="(unit, index) in getUnits" :key="unit.id + index">
-      <UnitItem :unit="unit"/>
-    </tr>
-  </tbody>
-  </table>
+  <div class="units">
+    <AgesFilter :units="getUnits"/>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+        <th>costs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(unit, index) in getUnits" :key="unit.id + index">
+        <UnitItem :unit="unit"/>
+      </tr>
+    </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import UnitItem from './UnitItem.vue';
+import UnitItem from '../components/UnitItem.vue';
+import AgesFilter from '../components/AgesFilter.vue';
 
 export default {
   name: 'Units',
   components: {
     UnitItem,
+    AgesFilter,
   },
   computed: {
     ...mapGetters('units', ['getUnits']),

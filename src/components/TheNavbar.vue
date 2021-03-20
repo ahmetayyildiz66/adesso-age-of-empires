@@ -4,8 +4,8 @@
           {{ $route.name }} Page
     </h1>
     <div class="navbar__routes">
-      <router-link to="/">Home</router-link>
-      <router-link to="/units">Units</router-link>
+      <router-link to="/" tag="a">Home</router-link>
+      <router-link to="/units" tag="a">Units</router-link>
     </div>
   </nav>
 </template>
@@ -28,5 +28,11 @@ export default {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+a {
+  &:visited {
+    color: $color-dodger-blue;
+  }
 }
 </style>

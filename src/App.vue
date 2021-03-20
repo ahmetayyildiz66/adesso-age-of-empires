@@ -17,10 +17,10 @@ export default {
     TheNavbar,
   },
   mounted() {
-    this.setUnits(ageOfEmpires);
+    this.initializeUnits(ageOfEmpires.units);
   },
   methods: {
-    ...mapActions('units', ['setUnits']),
+    ...mapActions('units', ['initializeUnits']),
   },
 };
 </script>
