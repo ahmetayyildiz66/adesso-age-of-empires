@@ -2,21 +2,34 @@ const units = {
   namespaced: true,
   state: {
     unitList: [],
+    filteredList: [],
   },
   mutations: {
-    SET_UNITS(state, list) {
+    INITIALIZE_UNITS(state, list) {
       state.unitList = list;
+      state.filteredList = list;
+    },
+    SET_FILTERED(state, list) {
+      state.filteredList = list;
     },
   },
   actions: {
-    setUnits({ commit }, list) {
-      commit('SET_UNITS', list);
+    initializeUnits({ commit }, list) {
+      commit('INITIALIZE_UNITS', list);
+    },
+    filterUnits({ commit, state }, age) {
+      const filteredList = state.unitList.filter((item) => {
+        if (age === 'All') {
+          return item;
+        }
+        return item.age === age;
+      });
+      commit('SET_FILTERED', filteredList);
     },
   },
   getters: {
-    // eslint-disable-next-line no-unused-vars
     getUnits(state) {
-      return state.unitList.units;
+      return state.filteredList;
     },
   },
 };
