@@ -1,5 +1,6 @@
 <template>
   <div class="ages">
+    <p class="ages__text">Ages</p>
     <div class="btn-group">
       <button class="btn-group__button"
         v-for="button in buttons"
@@ -63,6 +64,15 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.ages {
+  margin-left: 2rem;
+
+  &__text {
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+}
+
 .btn-group {
 
   &__button {
