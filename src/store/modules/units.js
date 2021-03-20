@@ -13,6 +13,12 @@ const units = {
       commit('SET_UNITS', list);
     },
   },
+  getters: {
+    // eslint-disable-next-line no-unused-vars
+    getUnits(state) {
+      return state.unitList.units;
+    },
+  },
 };
 
 export default units;
