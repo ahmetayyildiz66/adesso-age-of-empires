@@ -1,6 +1,8 @@
-import { createStore } from 'vuex';
+import { createLogger, createStore } from 'vuex';
+import units from './modules/units';
 
 export default createStore({
+  plugins: [createLogger()],
   state: {
   },
   mutations: {
@@ -8,5 +10,6 @@ export default createStore({
   actions: {
   },
   modules: {
+    units,
   },
 });

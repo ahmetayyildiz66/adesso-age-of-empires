@@ -1,5 +1,5 @@
 *, *::before, *::after {
-  margin: 1rem 3rem;
+  margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
@@ -10,4 +10,5 @@ html {
 
 body {
   box-sizing: border-box;
+  margin: 1rem 3rem;
 }
