@@ -37,7 +37,6 @@
       <td>Attack: {{ unitDetail.attack }}</td>
     </tr>
   </table>
-  <p>{{ unitDetail }}</p>
 </template>
 
 <script>
