@@ -48,12 +48,12 @@ export default {
     };
   },
   methods: {
-    ...mapActions('units', ['filterUnits']),
+    ...mapActions('units', ['setAge']),
     onAgeButton(name) {
       this.unSelectButtons();
       this.buttons = this.buttons.map((btn) => (btn.name === name
         ? { ...btn, isSelected: true } : btn));
-      this.filterUnits(name);
+      this.setAge(name);
     },
     unSelectButtons() {
       this.buttons.forEach((btn) => {
