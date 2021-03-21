@@ -12,16 +12,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(unit, index) in getUnits" :key="unit.id + index">
-        <UnitItem :unit="unit"/>
+      <tr v-for="(unit, index) in getUnits" :key="unit.id + index"
+        class="units__item"
+        @click="onDetail(unit.id)">
+          <UnitItem :unit="unit"/>
       </tr>
     </tbody>
     </table>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import UnitItem from '../components/UnitItem.vue';
 import AgesFilter from '../components/AgesFilter.vue';
 import CostsFilter from '../components/CostsFilter.vue';
@@ -33,8 +36,18 @@ export default {
     AgesFilter,
     CostsFilter,
   },
+  mounted() {
+    this.setAge('All');
+    this.setCost([]);
+  },
   computed: {
     ...mapGetters('units', ['getUnits']),
+  },
+  methods: {
+    ...mapActions('units', ['setAge', 'setCost']),
+    onDetail(id) {
+      this.$router.push({ name: 'UnitDetail', params: { id } });
+    },
   },
 };
 </script>
@@ -60,6 +73,16 @@ export default {
 
     &:last-child {
       border-right: none;
+    }
+  }
+}
+
+.units {
+  &__item {
+    cursor: pointer;
+
+    &:hover {
+      background: $table-even-value-color;
     }
   }
 }
