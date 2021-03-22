@@ -1,16 +1,16 @@
 <template>
-  <td>
-    {{ unit.id }}
-  </td>
-  <td>
-    {{ unit.name }}
-  </td>
-  <td>
-    {{ unit.age }}
-  </td>
-  <td>
-    {{ unitCost }}
-  </td>
+    <td>
+      {{ unit.id }}
+    </td>
+    <td>
+      {{ unit.name }}
+    </td>
+    <td>
+      {{ unit.age }}
+    </td>
+    <td>
+      {{ unitCost }}
+    </td>
 </template>
 
 <script>
@@ -45,10 +45,6 @@ td {
 
   &:last-child {
     border-right: none;
-  }
-
-  &:nth-child(2n) {
-    background: $table-even-value-color;
   }
 }
 
