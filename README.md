@@ -1,4 +1,4 @@
-# age-of-empires-adesso
+# Adesso Challenge - Age Of Empires
 
 ## Project setup
 ```
