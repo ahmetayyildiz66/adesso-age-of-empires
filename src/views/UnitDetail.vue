@@ -16,13 +16,13 @@
       <td>Min. Required Age: {{ unitDetail.age }}</td>
     </tr>
     <tr>
-      <td>Wood Cost: {{ unitDetail.cost['Wood'] ? unitDetail.cost['Wood']: '-----' }}</td>
+      <td>Wood Cost: {{ unitDetail.cost?.Wood ? unitDetail.cost['Wood']: '-----' }}</td>
     </tr>
     <tr>
-      <td>Food Cost: {{ unitDetail.cost['Food'] ? unitDetail.cost['Food']: '-----' }}</td>
+      <td>Food Cost: {{ unitDetail.cost?.Food ? unitDetail.cost['Food']: '-----' }}</td>
     </tr>
     <tr>
-      <td>Gold Cost: {{ unitDetail.cost['Gold'] ? unitDetail.cost['Gold']: '-----' }}</td>
+      <td>Gold Cost: {{ unitDetail.cost?.Gold ? unitDetail.cost['Gold']: '-----' }}</td>
     </tr>
     <tr>
       <td>Build Time: {{ unitDetail.build_time }}</td>
